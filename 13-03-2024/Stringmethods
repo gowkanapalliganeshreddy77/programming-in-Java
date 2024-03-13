@@ -1,0 +1,29 @@
+public class Stringmethods {
+    public static void main(String[] args) {
+
+        String str1 = "Hello";
+        String str2 = new String();
+        String str3 = new String("World");
+
+        System.out.println("Length of str1: " + str1.length());
+
+
+        String concatStr = str1.concat(" ").concat(str3);
+        System.out.println("Concatenated string: " + concatStr);
+
+
+        char charAtPos = str1.charAt(1);
+        System.out.println("Character at position 1 in str1: " + charAtPos);
+
+
+        String subStr = concatStr.substring(6, 11);
+        System.out.println("Substring of concatenated string: " + subStr);
+
+        
+        int index = concatStr.indexOf("World");
+        System.out.println("Index of 'World' in concatenated string: " + index);
+
+        boolean isEqual = str1.equals(str2);
+        System.out.println("Is str1 equal to str2? " + isEqual);
+    }
+}
