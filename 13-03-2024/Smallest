@@ -1,0 +1,21 @@
+import java.util.Arrays;
+public class Smallest {
+    public static void main(String[] args) {
+        int[] arr1 = { 1, 2, 3, 4, 5 };
+        int[] arr2 = { 10, 20, 30 };
+
+        if (arr1.length != arr2.length) {
+            int minLength = Math.min(arr1.length, arr2.length);
+            arr1 = Arrays.copyOf(arr1, minLength);
+            arr2 = Arrays.copyOf(arr2, minLength);
+        }
+
+        boolean areEqual = Arrays.equals(arr1, arr2);
+
+        if (areEqual) {
+            System.out.println("Arrays are equal.");
+        } else {
+            System.out.println("Arrays are not equal.");
+        }
+    }
+}
