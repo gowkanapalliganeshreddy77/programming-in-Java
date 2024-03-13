@@ -1,0 +1,21 @@
+public class Firstloop {
+    public static void main(String[] args){
+        int[][] matrixA = new int[1][9];
+        int[][] matrixB = new int[1][9];
+        for (int i = 0; i < 9; i++) {
+            matrixA[0][i] = i + 1;
+        }
+        for (int j = 0; j < 9; j++) {
+            matrixB[0][j] = 9 - j;
+        }
+        System.out.println("Matrix A:");
+        for (int i = 0; i < 9; i++) {
+            System.out.print(matrixA[0][i] + " ");
+        }
+        System.out.println();
+        System.out.println("Matrix B:");
+        for (int j = 0; j < 9; j++) {
+            System.out.print(matrixB[0][j] + " ");
+        }
+    }
+}
