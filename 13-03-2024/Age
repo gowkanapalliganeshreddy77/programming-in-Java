@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Age {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the age of the younger brother when the older brother was 5: ");
+        int youngerAgeAt5 = scanner.nextInt();
+        int ageDifference = 28 - 24;
+
+        // Calculate the current age of the older brother
+        int olderCurrentAge = 56 - ageDifference;
+        int youngerCurrentAge = olderCurrentAge - ageDifference;
+        int youngerAgeAt5Current = youngerCurrentAge - (olderCurrentAge - 5);
+
+        System.out.println("The age of the younger brother when the older brother was 5 was: " + youngerAgeAt5Current);
+
+        scanner.close();
+    }
+}
