@@ -1,0 +1,30 @@
+public class Stringbuffer {
+    public static void main(String[] args) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Hello");
+        stringBuilder.append(" ");
+        stringBuilder.append("World");
+        System.out.println("StringBuilder example: " + stringBuilder.toString());
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("Hello");
+        stringBuffer.append(" ");
+        stringBuffer.append("World");
+        System.out.println("StringBuffer example: " + stringBuffer.toString());
+        int iterations = 1000000;
+        long startTime, endTime;
+        startTime = System.nanoTime();
+        StringBuilder stringBuilderPerformance = new StringBuilder();
+        for (int i = 0; i < iterations; i++) {
+            stringBuilderPerformance.append("Iteration ").append(i).append(" ");
+        }
+        endTime = System.nanoTime();
+        System.out.println("Time taken using StringBuilder: " + (endTime - startTime) + " nanoseconds");
+        startTime = System.nanoTime();
+        StringBuffer stringBufferPerformance = new StringBuffer();
+        for (int i = 0; i < iterations; i++) {
+            stringBufferPerformance.append("Iteration ").append(i).append(" ");
+        }
+        endTime = System.nanoTime();
+        System.out.println("Time taken using StringBuffer: " + (endTime - startTime) + " nanoseconds");
+    }
+}
