@@ -1,0 +1,28 @@
+public class Enchancedloop {
+    public static void main(String[] args) {
+       
+        int[] numbers = {1, 5, 11, 19};
+
+        int primeCount = 0;
+        for (int number : numbers)
+        {
+            if (isPrime(number))
+            {
+                primeCount++;
+            }
+        }
+
+        System.out.println("Number of prime numbers in the array: " + primeCount);
+    }
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
