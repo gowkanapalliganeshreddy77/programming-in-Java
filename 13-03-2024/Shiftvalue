@@ -1,0 +1,22 @@
+public class Shiftvalue {
+    public static void main(String[] args) {
+        int[] A = { 5, 8, 3, 12, 6 };
+        int[] B = { 3, 4, 7, 10, 9 };
+
+        int n = A.length;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (A[i] > B[i]) {
+                int shiftedValue = A[i] >> 1;
+                System.out.println("Shifted right: " + shiftedValue);
+            }
+            else
+            {
+
+                int shiftedValue = A[i] << 1;
+                System.out.println("Shifted left: " + shiftedValue);
+            }
+        }
+    }
+}
