@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Confusionmatrix {
+    public static void main(String[] args){
+        Scanner a=new Scanner(System.in);
+        System.out.println("enter the value of true positive:");
+        int TP = a.nextInt();
+        System.out.println("enter the value of true negative:");
+        int TN = a.nextInt();
+        System.out.println("enter the value of false positive:");
+        int FP = a.nextInt();
+        System.out.println("enter the value of false neagative:");
+        int FN = a.nextInt();
+        double accuracy = (double) (TP + TN) / (TP + TN + FP + FN);
+        double recall = (double) TP / (TP + FN);
+        double precision = (double) TP / (TP + FP);
+        double f1Score = 2 * (precision * recall) / (precision + recall);
+        System.out.println("Accuracy: " + accuracy);
+        System.out.println("Recall (Sensitivity): " + recall);
+        System.out.println("Precision: " + precision);
+        System.out.println("F1-score: " + f1Score);
+    }
+}
