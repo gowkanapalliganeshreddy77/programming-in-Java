@@ -1,0 +1,36 @@
+public class Main {
+    public static void main(String[] args) {
+
+        int intValue = 100;
+        long longValue = intValue;
+
+        float floatValue = 3.14f;
+        double doubleValue = floatValue;
+
+
+        double doubleVal = 1234.5678;
+        float floatVal = (float) doubleVal;
+
+        long longVal = 9876543210L;
+        int intVal = (int) longVal;
+        int overflowInt = Integer.MAX_VALUE + 1;
+        int underflowInt = Integer.MIN_VALUE - 1;
+
+        byte overflowByte = (byte) (Byte.MAX_VALUE + 1);
+        byte underflowByte = (byte) (Byte.MIN_VALUE - 1);
+
+        System.out.println("Implicit Conversion:");
+        System.out.println("int to long: " + longValue);
+        System.out.println("float to double: " + doubleValue);
+
+        System.out.println("\nExplicit Conversion:");
+        System.out.println("double to float: " + floatVal);
+        System.out.println("long to int: " + intVal);
+
+        System.out.println("\nOverflow and Underflow Scenarios:");
+        System.out.println("Overflow int: " + overflowInt);
+        System.out.println("Underflow int: " + underflowInt);
+        System.out.println("Overflow byte: " + overflowByte);
+        System.out.println("Underflow byte: " + underflowByte);
+    }
+}
