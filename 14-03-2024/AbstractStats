@@ -1,0 +1,77 @@
+import java.util.Arrays;
+
+
+abstract class AbstractStats {
+
+    abstract int total(int[] numbers);
+    abstract double average(int[] numbers);
+
+
+    double mean(int[] numbers) {
+        int total = total(numbers);
+        return (double) total / numbers.length;
+    }
+
+    int mode(int[] numbers) {
+        Arrays.sort(numbers);
+        int mode = numbers[0];
+        int maxCount = 0;
+        int currentCount = 1;
+
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] == numbers[i - 1]) {
+                currentCount++;
+            } else {
+                if (currentCount > maxCount) {
+                    maxCount = currentCount;
+                    mode = numbers[i - 1];
+                }
+                currentCount = 1;
+            }
+        }
+
+        return mode;
+    }
+
+    double median(int[] numbers) {
+        Arrays.sort(numbers);
+        int n = numbers.length;
+        if (n % 2 == 0) {
+            return (double) (numbers[n / 2 - 1] + numbers[n / 2]) / 2;
+        } else {
+            return numbers[n / 2];
+        }
+    }
+}
+
+
+class ConcreteStats extends AbstractStats {
+    @Override
+    int total(int[] numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    @Override
+    double average(int[] numbers) {
+        int total = total(numbers);
+        return (double) total / numbers.length;
+    }
+}
+
+public class Mainab {
+    public static void main(String[] args) {
+        int[] numbers = {4, 7, 2, 8, 3, 7, 7, 4, 6, 9};
+
+        ConcreteStats stats = new ConcreteStats();
+
+        System.out.println("Total: " + stats.total(numbers));
+        System.out.println("Average: " + stats.average(numbers));
+        System.out.println("Mean: " + stats.mean(numbers));
+        System.out.println("Mode: " + stats.mode(numbers));
+        System.out.println("Median: " + stats.median(numbers));
+    }
+}
