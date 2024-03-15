@@ -1,0 +1,32 @@
+public class Arthimetic {
+    public static void main(String[] args) {
+
+        try {
+            int result = 10 / 0;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero");
+        }
+
+        try {
+            double result = Math.log(0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Logarithm of negative or zero");
+        }
+
+        try {
+            double result = Math.tan(Math.toRadians(90));
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Tan of 90 degrees");
+        }
+
+        try {
+            double result = Math.pow(0, 0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Zero raised to the power of zero");
+        }
+    }
+}
