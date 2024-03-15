@@ -1,0 +1,46 @@
+class Example {
+
+    int value;
+
+
+    Example(int value) {
+
+        this.value = value;
+    }
+
+
+    Example() {
+
+        this(0);
+    }
+
+
+    Example setValueAndReturn(int newValue) {
+        this.value = newValue;
+
+        return this;
+    }
+
+
+    void display() {
+        System.out.println("Value: " + this.value);
+    }
+
+    void passObject(Example obj) {
+        System.out.println("Passed object's value: " + obj.value);
+    }
+}
+
+public class Examples {
+    public static void main(String[] args) {
+        Example obj1 = new Example(5);
+        Example obj2 = new Example();
+
+        obj1.setValueAndReturn(10).display();
+
+        obj2.passObject(obj1);
+
+        Example obj3 = obj2.setValueAndReturn(20);
+        obj3.display();
+    }
+}
