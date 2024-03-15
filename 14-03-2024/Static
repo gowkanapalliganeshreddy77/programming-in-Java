@@ -1,0 +1,28 @@
+public class StaticExample {
+
+    static int staticVariable = 10;
+
+    static void staticMethod() {
+        System.out.println("This is a static method.");
+    }
+
+    static {
+        System.out.println("This is a static block.");
+    }
+
+    static class StaticNestedClass {
+        void nestedMethod() {
+            System.out.println("This is a method in a static nested class.");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("Static variable value: " + staticVariable);
+
+        staticMethod();
+
+        StaticNestedClass nestedObject = new StaticNestedClass();
+        nestedObject.nestedMethod();
+    }
+}
