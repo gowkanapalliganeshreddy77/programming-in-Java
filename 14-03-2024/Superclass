@@ -1,0 +1,46 @@
+class Superclass {
+    int superClassVariable = 10;
+
+    void superClassMethod() {
+        System.out.println("Superclass method");
+    }
+
+    Superclass() {
+        System.out.println("Superclass constructor");
+    }
+}
+
+class Subclass extends Superclass {
+    int subClassVariable = 20;
+
+    void subclassMethod() {
+        System.out.println("Subclass method");
+    }
+
+    Subclass() {
+
+        super();
+        System.out.println("Subclass constructor");
+    }
+
+    void accessingSuperclassMembers() {
+
+        System.out.println("Superclass variable: " + super.superClassVariable);
+        super.superClassMethod();
+    }
+
+    void invokingSuperclassMethod() {
+
+        super.superClassMethod();
+    }
+}
+
+public class Super {
+    public static void main(String[] args) {
+        Subclass obj = new Subclass();
+
+        obj.accessingSuperclassMembers();
+
+        obj.invokingSuperclassMethod();
+    }
+}
