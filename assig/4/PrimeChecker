@@ -1,0 +1,39 @@
+public class PrimeChecker  {
+    private int number;
+
+    public PrimeChecker(int number) {
+        this.number = number;
+    }
+
+    public void run() {
+        boolean isPrime = isPrime(number);
+        System.out.println(number + " is " + (isPrime ? "prime" : "not prime"));
+    }
+
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        if (num <= 3) {
+            return true;
+        }
+        if (num % 2 == 0 || num % 3 == 0) {
+            return false;
+        }
+        for (int i = 5; i * i <= num; i = i + 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {17, 20, 29, 100, 113};
+
+        for (int num : numbers) {
+            Thread thread =new Thread(newPrimeChecker(num));
+            thread.start();
+        }
+    }
+}
