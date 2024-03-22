@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Unique {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Given Number: ");
+        String numberStr = scanner.nextLine();
+        char[] numberArray = numberStr.toCharArray();
+        Set<String> uniquePermutations = new HashSet<>();
+        generateUniquePermutations(numberArray, 0, uniquePermutations);
+        System.out.println("Unique Permutations:");
+        for (String permutation : uniquePermutations) {
+            System.out.println(permutation);
+        }
+
+        scanner.close();
+    }
+    public static void generateUniquePermutations(char[] arr, int index, Set<String> uniquePermutations) {
+        if (index == arr.length) {
+            uniquePermutations.add(new String(arr));
+            return;
+        }
+
+        for (int i = index; i < arr.length; i++) {
+            swap(arr, index, i);
+            generateUniquePermutations(arr, index + 1, uniquePermutations);
+            swap(arr, index, i);
+        }
+    }
+    public static void swap(char[] arr, int i, int j) {
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
